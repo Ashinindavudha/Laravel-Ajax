@@ -28,6 +28,22 @@ Route::post('ajaxImageUpload', 'Ajax\AjaxImageController@ajaxImageUploadPost')->
  Route::get('query', 'Ajax\AutoCompleteSearchController@index');
  Route::get('autocomplete', 'Ajax\AutoCompleteSearchController@autocomplete');
 
+
+//todo app route start ! 
+ //display todo list
+Route::get('list','DataTableTodoCrudController@index');
+
+//display add todo form and create a new todo
+Route::get('add-todo','DataTableTodoCrudController@create');
+Route::post('post-todo','DataTableTodoCrudController@store');
+
+//display add todo form and create a new todo
+Route::get('edit-todo/{id?}','DataTableTodoCrudController@edit');
+Route::post('update-todo','DataTableTodoCrudController@update');
+
+//display add todo form and create a new todo
+Route::get('delete-todo/{id?}','DataTableTodoCrudController@delete');
+//todo app route end here!
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
