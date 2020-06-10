@@ -52,6 +52,9 @@ Route::get('contact-us','ContactForm\ContactFormController@index');
 //insert contact us data into mysql database table laravel
 Route::post('save-contact','ContactForm\ContactFormController@store');
 //End here!
+
+// One To One Relation Route
+Route::get('/one','Relation\OneToOneRelationController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
