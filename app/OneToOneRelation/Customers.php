@@ -9,6 +9,6 @@ class Customers extends Model
     protected $guarded = [];
     public function company()
     {
-    	return $this->hasOne(\App\OneToOneRelation\Company::class);
+    	return $this->belongsTo(\App\OneToOneRelation\Company::class);
     }
 }
