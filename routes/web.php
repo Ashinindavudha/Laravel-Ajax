@@ -55,6 +55,11 @@ Route::post('save-contact','ContactForm\ContactFormController@store');
 
 // One To One Relation Route
 Route::get('/one','Relation\OneToOneRelationController@index');
+
+// Jquery Load More Data On Scroll Route
+
+Route::get('/jquerydata','JqueryLoadMore\LoadController@index')->name('index');
+Route::get('/load/data','JqueryLoadMore\LoadController@loadData')->name('load.data');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
