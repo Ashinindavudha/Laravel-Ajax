@@ -44,6 +44,14 @@ Route::post('update-todo','DataTableTodoCrudController@update');
 //display add todo form and create a new todo
 Route::get('delete-todo/{id?}','DataTableTodoCrudController@delete');
 //todo app route end here!
+
+//Jquery ContactForm Validation Route Start here !
+//display contact us form
+Route::get('contact-us','ContactForm\ContactFormController@index');
+
+//insert contact us data into mysql database table laravel
+Route::post('save-contact','ContactForm\ContactFormController@store');
+//End here!
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
