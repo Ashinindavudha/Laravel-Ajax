@@ -60,6 +60,14 @@ Route::get('/one','Relation\OneToOneRelationController@index');
 
 Route::get('/jquerydata','JqueryLoadMore\LoadController@index')->name('index');
 Route::get('/load/data','JqueryLoadMore\LoadController@loadData')->name('load.data');
+
+// Multiple File Upload Route
+//display file uploading form
+ Route::get('multiple-file-upload', 'MultipleFileUpload\MultipleFileUploadController@index');
+//store files in database
+ Route::post('save-multiple-file-upload', 'MultipleFileUpload\MultipleFileUploadController@fileStore');
+
+ //end here 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
