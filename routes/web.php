@@ -68,6 +68,11 @@ Route::get('/load/data','JqueryLoadMore\LoadController@loadData')->name('load.da
  Route::post('save-multiple-file-upload', 'MultipleFileUpload\MultipleFileUploadController@fileStore');
 
  //end here 
+
+ //user auto_complete_search 
+ Route::get('search', 'UserAutoCompleteSerarchController@index');
+ Route::get('autocomplete', 'UserAutoCompleteSerarchController@search');
+ //end
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
