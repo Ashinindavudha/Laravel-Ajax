@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 //Ajax Product Controller 
 Route::resource('ajaxproducts', 'Ajax\ProductController');
 
@@ -73,6 +75,26 @@ Route::get('/load/data','JqueryLoadMore\LoadController@loadData')->name('load.da
  Route::get('search', 'UserAutoCompleteSerarchController@index');
  Route::get('autocomplete', 'UserAutoCompleteSerarchController@search');
  //end
+
+ //Post Category 
+ Route::resource('postcategories', 'PostCategoryController');
+
+//Media Library Multiple File Upload
+ Route::post('projects/media', 'MediaLibraryMultipleUploadFileController@storeMedia')
+  ->name('projects.storeMedia');
+  Route::resource('projects', 'MediaLibraryMultipleUploadFileController');
+
+  //Resource route for posts includes routes for create, read, update, delete
+Route::resource('posts', 'PostController');
+// wysieditor route (BookController)
+// Route::get('books','BookController@index');
+// Route::post('books','BookController@store')->name('books.store');
+// Route::get('books/{id}','BookController@show')->name('books.show');
+Route::resource('books', 'BookController');
+
+//Media Test Route
+Route::resource('mediatest', 'MediaTestController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
